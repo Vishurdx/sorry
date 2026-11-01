@@ -44,5 +44,5 @@ Copy your WhatsApp stickers (or cute meme / romantic sticker images) into `asset
 
 ## 🚀 How to Run the Website:
 1. Open terminal in `d:\Baby`
-2. Run: `node server.js`
+2. Run: `npm run dev` (or `node local-server.js`)
 3. Open your browser at: `http://localhost:3000`
