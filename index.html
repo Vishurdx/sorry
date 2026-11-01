@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>A Story Just For You, My Love 🌻💜</title>
+  <meta name="description" content="An interactive romantic apology and storybook for the most special girl in the world.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- Canvas Confetti for Celebration -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <!-- Ambient Floating Hearts Background -->
+  <div class="ambient-background" id="ambient-bg" aria-hidden="true"></div>
+
+  <!-- Main Realistic Book Container -->
+  <main class="book-perspective">
+    
+    <!-- Ribbon Bookmark hanging from top -->
+    <div class="ribbon-bookmark" id="ribbon-bookmark" title="Bookmark">
+      <div class="ribbon-tail"></div>
+    </div>
+
+    <div class="book-container" id="book-container">
+
+      <!-- Top Book Navigation Bar -->
+      <header class="book-top-bar">
+        <div class="bar-left">
+          <span class="book-emboss-title">✨ Our Little Storybook 🌻✨</span>
+        </div>
+        <div class="bar-center">
+          <span class="page-badge" id="page-indicator">Page 1 of 4 • A Letter from My Heart 🌻</span>
+        </div>
+        <div class="bar-right">
+          <button class="music-toggle-btn" id="music-btn" title="Toggle Romantic Lofi Music">
+            <span class="music-icon" id="music-icon">🎵</span>
+            <span class="music-label" id="music-label">Music: Off</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Pages Viewport / Book Spine Centerfold -->
+      <div class="book-pages-wrapper">
+        <div class="book-spine-shadow" aria-hidden="true"></div>
+
+        <!-- ==========================================
+             PAGE 1: Sincere Apology Letter
+             ========================================== -->
+        <article class="page active" id="page-1" data-page="1">
+          <div class="page-inner letter-scroll">
+            
+            <div class="letter-stamp">
+              <span class="stamp-icon">🌻</span>
+              <span class="stamp-text">From Vishu</span>
+            </div>
+
+            <h1 class="letter-greeting">Hi My love of life,</h1>
+
+            <div class="letter-body">
+              <p class="dropcap-paragraph">
+                I honestly don't even know how to start this, but I just want to say I'm really sorry.
+              </p>
+
+              <p>
+                I know I've not been the boyfriend you needed me to be over the past few months. I've been so caught up with office work, responsibilities and everything happening around me that I somehow forgot that you also need my time, attention and presence. And the worst part is that there were days when I didn't just get busy, I actually ignored you. I know how that must have made you feel, and it hurts me to realise that I've been the reason behind it.
+              </p>
+
+              <p>
+                I know you never asked for anything extraordinary. You just wanted a little of my time, a few conversations, some attention, and to feel that you're important to me. And I'm sorry that I made even those little things feel like too much to ask for.
+              </p>
+
+              <blockquote class="highlight-quote">
+                "You are my sunflower 🌻 — the brightest, warmest part of every single day. I never want you to feel that you have to beg for my time or that you have to keep reminding me that you exist in my life. You shouldn't have to do that. You deserve to feel loved without having to ask for it."
+              </blockquote>
+
+              <p>
+                I know saying that I was busy with work doesn't justify making you feel ignored or unimportant. You have your own feelings, your own expectations, and you deserve to be heard too. Maybe I've been so occupied with managing everything else that I haven't realised how much I've been neglecting us.
+              </p>
+
+              <p>
+                I miss the way things used to be. I miss talking to you without constantly looking at the clock or thinking about work. I miss giving you my undivided attention. And honestly, I don't want us to become two people who are together but barely have time for each other.
+              </p>
+
+              <p>
+                I'm not saying all this just because I don't want you to be upset with me. I'm saying it because I genuinely don't want to lose the little things that make us us.
+              </p>
+
+              <p>
+                I can't promise that I'll never be busy, but I can promise that I don't want to make you feel alone in this relationship again. I want to make an effort, be more present and show you through my actions that you matter to me.
+              </p>
+
+              <p>
+                I'm sorry for all the times I made you wait, all the times I didn't listen, and all the times you needed me but I wasn't there.
+              </p>
+
+              <div class="letter-closing">
+                <p class="letter-signoff">
+                  I love you. And I really hope I can make you feel that, not just through my words but through the way I treat you every single day. ❤️
+                </p>
+                <div class="wax-seal-container">
+                  <div class="wax-seal" title="Sealed with Love">
+                    <span class="wax-heart">🌻</span>
+                  </div>
+                  <div class="handwritten-sign">Forever Yours, Vishu 💜</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="page-turn-hint" onclick="window.bookApp.nextPage()">
+              <span>Turn page to see our memories</span>
+              <span class="hint-arrow">➔</span>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- ==========================================
+             PAGE 2: Pictures of Us & Our Memories (Scrapbook)
+             ========================================== -->
+        <article class="page" id="page-2" data-page="2">
+          <div class="page-inner">
+            
+            <div class="page-header-block">
+              <span class="page-tag">Chapter Two • Sunflowers & Memories 🌻</span>
+              <h2 class="page-title">Pictures of Us & Our Sweet Moments 📸💜</h2>
+              <p class="page-subtitle">Every photograph reminds me why you are my sunflower and my favorite person in the entire universe.</p>
+            </div>
+
+            <!-- Scrapbook Polaroid Grid (5 Real Photos) -->
+            <div class="polaroid-grid polaroid-grid-5" id="photos-grid">
+
+              <!-- Photo 1: B&W Outdoor Smiles -->
+              <div class="polaroid-card tilt-left" data-index="1">
+                <div class="washi-tape tape-lavender"></div>
+                <div class="sunflower-sticker-corner">🌻</div>
+                <div class="polaroid-img-wrap">
+                  <img src="assets/photos/photo1.jpg" alt="Our sweet smiles outdoors" class="polaroid-img" id="img-photo-1">
+                  <button class="change-photo-btn" data-target="photo1" title="Change this photo 📷">📷</button>
+                  <span class="zoom-badge" title="Click to zoom">🔍</span>
+                </div>
+                <div class="polaroid-caption">
+                  <p class="caption-handwritten">The sweetest smile that brightens my darkest days ✨</p>
+                  <span class="caption-date">Pure Happiness • With You</span>
+                </div>
+              </div>
+
+              <!-- Photo 2: B&W Hand Framing Heart -->
+              <div class="polaroid-card tilt-right" data-index="2">
+                <div class="washi-tape tape-sunflower"></div>
+                <div class="sunflower-sticker-corner">🌻</div>
+                <div class="polaroid-img-wrap">
+                  <img src="assets/photos/photo2.jpg" alt="Held safely in your love" class="polaroid-img" id="img-photo-2">
+                  <button class="change-photo-btn" data-target="photo2" title="Change this photo 📷">📷</button>
+                  <span class="zoom-badge" title="Click to zoom">🔍</span>
+                </div>
+                <div class="polaroid-caption">
+                  <p class="caption-handwritten">Held safely in your love & tender care 🫶</p>
+                  <span class="caption-date">My Comfort Zone • Just Us</span>
+                </div>
+              </div>
+
+              <!-- Photo 3: B&W Mirror Heart Pose -->
+              <div class="polaroid-card tilt-left" data-index="3">
+                <div class="washi-tape tape-lilac"></div>
+                <div class="sunflower-sticker-corner">🌻</div>
+                <div class="polaroid-img-wrap">
+                  <img src="assets/photos/photo3.jpg" alt="Two hearts beating as one" class="polaroid-img" id="img-photo-3">
+                  <button class="change-photo-btn" data-target="photo3" title="Change this photo 📷">📷</button>
+                  <span class="zoom-badge" title="Click to zoom">🔍</span>
+                </div>
+                <div class="polaroid-caption">
+                  <p class="caption-handwritten">Two souls, one heart, forever united 🪞❤️</p>
+                  <span class="caption-date">Our Favorite Pose • True Love</span>
+                </div>
+              </div>
+
+              <!-- Photo 4: Color Face Mask / Silly Spa Date -->
+              <div class="polaroid-card tilt-right" data-index="4">
+                <div class="washi-tape tape-sunflower"></div>
+                <div class="sunflower-sticker-corner">🌻</div>
+                <div class="polaroid-img-wrap">
+                  <img src="assets/photos/photo4.jpg" alt="Our silly goofy spa session" class="polaroid-img" id="img-photo-4">
+                  <button class="change-photo-btn" data-target="photo4" title="Change this photo 📷">📷</button>
+                  <span class="zoom-badge" title="Click to zoom">🔍</span>
+                </div>
+                <div class="polaroid-caption">
+                  <p class="caption-handwritten">Being goofy & laughing till our cheeks hurt 🧖‍♀️✌️</p>
+                  <span class="caption-date">Spa Date • Silly & In Love</span>
+                </div>
+              </div>
+
+              <!-- Photo 5: Color Romantic Night Date -->
+              <div class="polaroid-card tilt-straight" data-index="5">
+                <div class="washi-tape tape-lavender"></div>
+                <div class="sunflower-sticker-corner">🌻</div>
+                <div class="polaroid-img-wrap">
+                  <img src="assets/photos/photo5.jpg" alt="You bring all the color into my world" class="polaroid-img" id="img-photo-5">
+                  <button class="change-photo-btn" data-target="photo5" title="Change this photo 📷">📷</button>
+                  <span class="zoom-badge" title="Click to zoom">🔍</span>
+                </div>
+                <div class="polaroid-caption">
+                  <p class="caption-handwritten">You bring all the color into my entire world 🌙💖</p>
+                  <span class="caption-date">Forever & Always • Under The Stars</span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="page-turn-hint" onclick="window.bookApp.nextPage()">
+              <span>Turn page to see our WhatsApp stickers</span>
+              <span class="hint-arrow">➔</span>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- ==========================================
+             PAGE 3: WhatsApp Stickers
+             ========================================== -->
+        <article class="page" id="page-3" data-page="3">
+          <div class="page-inner">
+            
+            <div class="page-header-block">
+              <span class="page-tag">Chapter Three</span>
+              <h2 class="page-title">Our WhatsApp Stickers 💬🧸</h2>
+              <p class="page-subtitle">The cute, silly, dramatic stickers that tell our daily love story!</p>
+            </div>
+
+            <!-- Category Filter Tabs -->
+            <div class="sticker-tabs" id="sticker-tabs">
+              <button class="tab-btn active" data-filter="all">All Stickers (8)</button>
+              <button class="tab-btn" data-filter="apology">Apology & Begging 🥺</button>
+              <button class="tab-btn" data-filter="love">Pure Love 💖</button>
+              <button class="tab-btn" data-filter="cute">Cute & Silly 🧸</button>
+            </div>
+
+            <!-- Stickers Board Grid -->
+            <div class="stickers-grid" id="stickers-grid">
+
+              <!-- Sticker 1 -->
+              <div class="sticker-card" data-category="love cute" data-name="Happy Bear">
+                <div class="whatsapp-badge">WhatsApp</div>
+                <div class="sticker-media-wrap">
+                  <img src="assets/stickers/sticker1.png" alt="Happy Bear Sticker" class="sticker-img" id="img-sticker-1" onerror="this.src='assets/happy_bear.jpg'">
+                  <button class="change-sticker-btn" data-target="sticker1" title="Change this sticker 📷">📷</button>
+                </div>
+                <div class="sticker-info">
+                  <span class="sticker-caption">"Me whenever you text me back 🥰"</span>
+                  <span class="tap-hint">Tap for reaction ✨</span>
+                </div>
+              </div>
+
+              <!-- Sticker 2 -->
+              <div class="sticker-card" data-category="apology cute" data-name="Sad Bear">
+                <div class="whatsapp-badge">WhatsApp</div>
+                <div class="sticker-media-wrap">
+                  <img src="assets/stickers/sticker2.png" alt="Sad Bear Sticker" class="sticker-img" id="img-sticker-2" onerror="this.src='assets/sad_bear.jpg'">
+                  <button class="change-sticker-btn" data-target="sticker2" title="Change this sticker 📷">📷</button>
+                </div>
+                <div class="sticker-info">
+                  <span class="sticker-caption">"Missing you & waiting by the phone 🥺"</span>
+                  <span class="tap-hint">Tap for reaction ✨</span>
+                </div>
+              </div>
+
+              <!-- Sticker 3 (Donkey Apology Sticker) -->
+              <div class="sticker-card" data-category="apology cute" data-name="Donkey Apology">
+                <div class="whatsapp-badge">WhatsApp</div>
+                <div class="sticker-media-wrap">
+                  <img src="assets/donkey_apology.jpg" alt="I Am An Ass Sad Donkey Sticker" class="sticker-img" id="img-sticker-donkey">
+                </div>
+                <div class="sticker-info">
+                  <span class="sticker-caption">"I admit it, I was being an ass 🐴😭"</span>
+                  <span class="tap-hint">Tap for reaction ✨</span>
+                </div>
+              </div>
+
+              <!-- Sticker 4 -->
+              <div class="sticker-card" data-category="love cute" data-name="Warm Hug">
+                <div class="whatsapp-badge">WhatsApp</div>
+                <div class="sticker-media-wrap">
+                  <img src="assets/stickers/sticker4.svg" alt="Big Bear Hug Sticker" class="sticker-img" id="img-sticker-4">
+                  <button class="change-sticker-btn" data-target="sticker4" title="Change this sticker 📷">📷</button>
+                </div>
+                <div class="sticker-info">
+                  <span class="sticker-caption">"1,000,000 virtual warm hugs! 🤗"</span>
+                  <span class="tap-hint">Tap for reaction ✨</span>
+                </div>
+              </div>
+
+              <!-- Sticker 5 -->
+              <div class="sticker-card" data-category="apology" data-name="Dramatic Crying">
+                <div class="whatsapp-badge">WhatsApp</div>
+                <div class="sticker-media-wrap">
+                  <img src="assets/stickers/sticker5.svg" alt="Dramatic Crying Sticker" class="sticker-img" id="img-sticker-5">
+                  <button class="change-sticker-btn" data-target="sticker5" title="Change this sticker 📷">📷</button>
+                </div>
+                <div class="sticker-info">
+                  <span class="sticker-caption">"Dramatic crying for forgiveness 😭"</span>
+                  <span class="tap-hint">Tap for reaction ✨</span>
+                </div>
+              </div>
+
+              <!-- Sticker 6 -->
+              <div class="sticker-card" data-category="love" data-name="Penguin Rose">
+                <div class="whatsapp-badge">WhatsApp</div>
+                <div class="sticker-media-wrap">
+                  <img src="assets/stickers/sticker6.svg" alt="Penguin with Rose Sticker" class="sticker-img" id="img-sticker-6">
+                  <button class="change-sticker-btn" data-target="sticker6" title="Change this sticker 📷">📷</button>
+                </div>
+                <div class="sticker-info">
+                  <span class="sticker-caption">"A fresh red rose for my girl 🌹"</span>
+                  <span class="tap-hint">Tap for reaction ✨</span>
+                </div>
+              </div>
+
+              <!-- Sticker 7 -->
+              <div class="sticker-card" data-category="cute apology" data-name="Boba Offering">
+                <div class="whatsapp-badge">WhatsApp</div>
+                <div class="sticker-media-wrap">
+                  <img src="assets/stickers/sticker7.svg" alt="Boba Peace Offering Sticker" class="sticker-img" id="img-sticker-7">
+                  <button class="change-sticker-btn" data-target="sticker7" title="Change this sticker 📷">📷</button>
+                </div>
+                <div class="sticker-info">
+                  <span class="sticker-caption">"Boba date peace offering? 🧋"</span>
+                  <span class="tap-hint">Tap for reaction ✨</span>
+                </div>
+              </div>
+
+              <!-- Sticker 8 -->
+              <div class="sticker-card" data-category="love" data-name="Endless Kisses">
+                <div class="whatsapp-badge">WhatsApp</div>
+                <div class="sticker-media-wrap">
+                  <img src="assets/stickers/sticker8.svg" alt="Kissing Bunny Sticker" class="sticker-img" id="img-sticker-8">
+                  <button class="change-sticker-btn" data-target="sticker8" title="Change this sticker 📷">📷</button>
+                </div>
+                <div class="sticker-info">
+                  <span class="sticker-caption">"Endless forehead kisses and cuddles 💋"</span>
+                  <span class="tap-hint">Tap for reaction ✨</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Helpful folder guide banner -->
+            <div class="folder-guide-banner">
+              <span class="guide-icon">💬</span>
+              <div class="guide-text">
+                <strong>How to add your WhatsApp stickers:</strong>
+                Right-click stickers in WhatsApp Web → "Save image as..." into <code>assets/stickers/</code> as <code>sticker1.png</code> to <code>sticker8.png</code>!
+              </div>
+            </div>
+
+            <div class="page-turn-hint" onclick="window.bookApp.nextPage()">
+              <span>Turn page for the question...</span>
+              <span class="hint-arrow">➔</span>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- ==========================================
+             PAGE 4: The Cute Question + Unclickable No Button
+             ========================================== -->
+        <article class="page" id="page-4" data-page="4">
+          <div class="page-inner question-page-content" id="question-arena">
+            
+            <div class="mascot-wrapper">
+              <img src="assets/pleading_mascot.svg" alt="Pleading Bear" class="mascot-img pulse-mascot" id="question-mascot">
+            </div>
+
+            <div class="question-header">
+              <span class="page-tag">The Most Important Question</span>
+              <h2 class="question-title">Have you forgiven me? 🥺👉👈</h2>
+              <p class="question-subtitle">
+                I know saying sorry is only the beginning. Will you give me a chance to make you feel loved and cherished every single day?
+              </p>
+            </div>
+
+            <!-- Escape Counter & Bubble -->
+            <div class="escape-counter" id="escape-counter">
+              <span class="counter-badge" id="counter-badge">Give it a try... ❤️</span>
+            </div>
+
+            <!-- Floating Pleading Message Bubble (follows the No button) -->
+            <div class="runaway-bubble" id="runaway-bubble" aria-live="polite">
+              Are you sure? 🥺
+            </div>
+
+            <!-- Interactive Buttons Arena -->
+            <div class="buttons-arena" id="buttons-arena">
+              
+              <!-- YES BUTTON -->
+              <button class="btn btn-yes" id="btn-yes">
+                <span class="btn-heart-icon">🌻</span>
+                <span class="btn-text">Yes, I forgive you! 🥰💜</span>
+                <span class="btn-sparkle">✨</span>
+              </button>
+
+              <!-- NO BUTTON (ELUSIVE / RUNAWAY) -->
+              <button class="btn btn-no" id="btn-no">
+                <span class="btn-no-text" id="no-btn-text">No 😤</span>
+              </button>
+
+            </div>
+
+            <div class="closing-love-note">
+              <p>Whenever you are ready, I will be right here holding your hand.</p>
+              <span class="forever-signature">Forever & always yours, Vishu 🌻💜</span>
+            </div>
+
+          </div>
+        </article>
+
+      </div> <!-- /book-pages-wrapper -->
+
+      <!-- Bottom Book Navigation Controls -->
+      <footer class="book-bottom-bar">
+        <button class="book-nav-btn prev-btn" id="prev-btn" disabled>
+          <span class="nav-arrow">←</span>
+          <span class="nav-btn-text">Previous Page</span>
+        </button>
+
+        <div class="book-dots" id="dots-container">
+          <button class="book-dot active" data-page="1" title="Page 1: Sincere Apology">
+            <span class="dot-number">1</span>
+            <span class="dot-label">Apology</span>
+          </button>
+          <button class="book-dot" data-page="2" title="Page 2: Our Pictures">
+            <span class="dot-number">2</span>
+            <span class="dot-label">Photos</span>
+          </button>
+          <button class="book-dot" data-page="3" title="Page 3: WhatsApp Stickers">
+            <span class="dot-number">3</span>
+            <span class="dot-label">Stickers</span>
+          </button>
+          <button class="book-dot" data-page="4" title="Page 4: Forgive Me?">
+            <span class="dot-number">4</span>
+            <span class="dot-label">Forgive Me?</span>
+          </button>
+        </div>
+
+        <button class="book-nav-btn next-btn" id="next-btn">
+          <span class="nav-btn-text">Next Page</span>
+          <span class="nav-arrow">→</span>
+        </button>
+      </footer>
+
+    </div> <!-- /book-container -->
+  </main>
+
+  <!-- ==========================================
+       CELEBRATION OVERLAY MODAL (When YES is clicked)
+       ========================================== -->
+  <div class="celebration-modal" id="celebration-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="celebration-backdrop" id="celebration-backdrop"></div>
+    <div class="celebration-card">
+      
+      <!-- Sunflower decorative pins in modal -->
+      <div class="modal-sunflower-decor decor-top-left" aria-hidden="true">🌻</div>
+      <div class="modal-sunflower-decor decor-top-right" aria-hidden="true">🌻</div>
+
+      <!-- Donkey "I AM AN ASS" Sticker -->
+      <div class="celebration-sticker-wrap">
+        <img src="assets/donkey_apology.jpg" alt="I Am An Ass Sad Donkey Sticker" class="celebration-donkey-img">
+        <div class="sticker-tag-badge">🥺 "I was being a total donkey, but I love you!"</div>
+      </div>
+
+      <h2 class="celebration-title">YAAAYYY! You Forgave Me! 🎉🌻💜</h2>
+      
+      <!-- Cute Note Letter from Vishu -->
+      <div class="celebration-note-letter">
+        <div class="note-seal">🌻</div>
+        <h3 class="note-heading">A Note for My Prettiest Sunflower 🌻💜</h3>
+        <p class="note-p">
+          Yes baby, I admit it completely... <strong>I really was being an ass</strong> (literally 🐴😭)! I let office work and silly distractions pull me away, but that will never happen again. There is no excuse for ever making my favorite girl feel ignored or second best.
+        </p>
+        <p class="note-p">
+          Thank you for having the sweetest, most generous heart in this entire world and giving your goofy donkey another chance. You bring sunshine, lavender peace, and endless joy into my life. I love you with all my heart!
+        </p>
+        <p class="note-signoff">Forever & completely yours, <br><span class="sign-handwritten">Vishu ❤️ (Your Reformed Donkey 🐴🌻)</span></p>
+      </div>
+      
+      <!-- Promises -->
+      <div class="celebration-promises-box">
+        <div class="promise-tag">🌻 Endless Sunflowers & Special Dates</div>
+        <div class="promise-tag">💜 100% Undivided Attention & Care</div>
+        <div class="promise-tag">📱 Always Picking Up Your Calls Instantly</div>
+        <div class="promise-tag">🍫 Boba, Chocolates & Treats on Demand</div>
+        <div class="promise-tag">🫂 Unlimited Cuddles & Forehead Kisses</div>
+      </div>
+
+      <div class="celebration-actions">
+        <!-- Direct WhatsApp Link Button -->
+        <a href="https://api.whatsapp.com/send?text=I%20forgive%20you%20baby%20❤️%20(Even%20though%20you%20were%20being%20a%20total%20donkey%20🐴🌻)%20Now%20where%20are%20my%20sunflowers?%20🥰" target="_blank" rel="noopener noreferrer" class="whatsapp-send-btn" id="whatsapp-send-btn">
+          <span class="wa-icon">💬</span>
+          <span>Send "I forgive you baby 🐴🌻💜" on WhatsApp</span>
+        </a>
+
+        <button class="celebration-close-btn" id="celebration-close-btn">
+          📖 Read Our Book Again
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       LIGHTBOX MODAL (For zooming photos)
+       ========================================== -->
+  <div class="lightbox-modal" id="lightbox-modal" aria-hidden="true">
+    <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
+    <div class="lightbox-content">
+      <button class="lightbox-close-btn" id="lightbox-close-btn" title="Close">✕</button>
+      <img src="" alt="Enlarged Memory" class="lightbox-img" id="lightbox-img">
+      <p class="lightbox-caption" id="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <!-- Hidden File Input for live photo/sticker replacement directly in browser -->
+  <input type="file" id="image-file-input" accept="image/*" style="display: none;" aria-hidden="true">
+
+  <!-- Application Logic -->
+  <script src="app.js"></script>
+</body>
+</html>

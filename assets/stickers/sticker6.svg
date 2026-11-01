@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <filter id="roseShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  <g filter="url(#roseShadow)">
+    <!-- Penguin Body -->
+    <ellipse cx="85" cy="110" rx="42" ry="48" fill="#303846"/>
+    <!-- Penguin White Belly -->
+    <ellipse cx="85" cy="115" rx="30" ry="38" fill="#ffffff"/>
+    <!-- Penguin Feet -->
+    <ellipse cx="68" cy="155" rx="14" ry="7" fill="#ffa726"/>
+    <ellipse cx="102" cy="155" rx="14" ry="7" fill="#ffa726"/>
+    <!-- Blushing cheeks -->
+    <ellipse cx="66" cy="102" rx="8" ry="5" fill="#ff8da1" opacity="0.8"/>
+    <ellipse cx="104" cy="102" rx="8" ry="5" fill="#ff8da1" opacity="0.8"/>
+    <!-- Big Shiny Eyes -->
+    <ellipse cx="73" cy="92" rx="7" ry="9" fill="#1c2128"/>
+    <circle cx="71" cy="89" r="3" fill="#ffffff"/>
+    <ellipse cx="97" cy="92" rx="7" ry="9" fill="#1c2128"/>
+    <circle cx="95" cy="89" r="3" fill="#ffffff"/>
+    <!-- Beak -->
+    <polygon points="85,96 78,103 92,103" fill="#ff9800"/>
+    <!-- Rose being held -->
+    <g transform="translate(118, 90)">
+      <!-- Stem and leaves -->
+      <path d="M 0 35 Q -10 15 0 0" fill="none" stroke="#388e3c" stroke-width="4" stroke-linecap="round"/>
+      <ellipse cx="-8" cy="18" rx="8" ry="4" fill="#4caf50" transform="rotate(-30, -8, 18)"/>
+      <!-- Rose Flower -->
+      <circle cx="0" cy="-5" r="14" fill="#e91e63"/>
+      <circle cx="-3" cy="-7" r="9" fill="#d81b60"/>
+      <circle cx="2" cy="-9" r="5" fill="#c2185b"/>
+      <!-- Sparkle -->
+      <polygon points="12,-15 14,-9 20,-7 14,-5 12,1 10,-5 4,-7 10,-9" fill="#ffeb3b"/>
+    </g>
+    <!-- Little flipper holding stem -->
+    <ellipse cx="112" cy="120" rx="8" ry="15" fill="#303846" transform="rotate(-25, 112, 120)"/>
+    <text x="100" y="182" text-anchor="middle" fill="#e91e63" font-size="13" font-family="'Plus Jakarta Sans', sans-serif" font-weight="bold">For My Princess 🌹</text>
+  </g>
+</svg>

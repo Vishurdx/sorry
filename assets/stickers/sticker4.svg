@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <filter id="hugShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  <g filter="url(#hugShadow)">
+    <!-- Bear Brown Body -->
+    <ellipse cx="80" cy="120" rx="45" ry="40" fill="#a47148"/>
+    <!-- Bear Ears -->
+    <circle cx="50" cy="65" r="16" fill="#a47148"/>
+    <circle cx="50" cy="65" r="9" fill="#d2a079"/>
+    <circle cx="105" cy="65" r="16" fill="#a47148"/>
+    <circle cx="105" cy="65" r="9" fill="#d2a079"/>
+    <!-- Bear Head -->
+    <circle cx="78" cy="95" r="38" fill="#bb8557" stroke="#ffffff" stroke-width="4"/>
+    <!-- Snout -->
+    <ellipse cx="78" cy="104" rx="16" ry="12" fill="#f5dec8"/>
+    <ellipse cx="78" cy="99" rx="6" ry="4" fill="#332211"/>
+    <!-- Closed Happy Eyes -->
+    <path d="M 60 92 Q 68 85 73 92" fill="none" stroke="#332211" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 83 92 Q 88 85 96 92" fill="none" stroke="#332211" stroke-width="3" stroke-linecap="round"/>
+    <!-- Pink Bunny being hugged -->
+    <g transform="translate(42, 10)">
+      <!-- Bunny Ears -->
+      <ellipse cx="90" cy="50" rx="9" ry="24" fill="#ffffff" stroke="#ffb3c6" stroke-width="3" transform="rotate(15, 90, 50)"/>
+      <ellipse cx="74" cy="55" rx="8" ry="20" fill="#ffffff" stroke="#ffb3c6" stroke-width="3" transform="rotate(-10, 74, 55)"/>
+      <circle cx="82" cy="88" r="28" fill="#ffffff" stroke="#ffb3c6" stroke-width="3"/>
+      <!-- Happy bunny eyes -->
+      <path d="M 72 86 Q 77 80 82 86" fill="none" stroke="#663344" stroke-width="2.5" stroke-linecap="round"/>
+      <ellipse cx="85" cy="94" rx="10" ry="6" fill="#ffb3c6" opacity="0.6"/>
+      <polygon points="84,89 82,92 86,92" fill="#ff6b8b"/>
+    </g>
+    <!-- Big Bear Hug Arm wrapping around -->
+    <path d="M 50 120 C 60 145, 125 145, 135 115 C 138 105, 128 98, 120 105 C 110 115, 75 125, 55 110 Z" fill="#a47148" stroke="#ffffff" stroke-width="3"/>
+    <!-- Floating Hearts -->
+    <g fill="#ff3366">
+      <path d="M 155 45 C 155 35, 140 32, 135 42 C 130 32, 115 35, 115 45 C 115 60, 135 70, 135 75 C 135 70, 155 60, 155 45 Z" transform="scale(0.5) translate(130, 20)"/>
+      <path d="M 155 45 C 155 35, 140 32, 135 42 C 130 32, 115 35, 115 45 C 115 60, 135 70, 135 75 C 135 70, 155 60, 155 45 Z" transform="scale(0.35) translate(400, 100)"/>
+    </g>
+    <text x="100" y="180" text-anchor="middle" fill="#ff3366" font-size="14" font-family="'Plus Jakarta Sans', sans-serif" font-weight="bold">Big Warm Hug! 🤗</text>
+  </g>
+</svg>

@@ -1,0 +1,22 @@
+{
+  "name": "apology-for-baby",
+  "version": "1.0.0",
+  "description": "A sweet, interactive apology and love letter frontend website",
+  "main": "index.html",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "love",
+    "apology",
+    "interactive",
+    "valentine",
+    "frontend"
+  ],
+  "author": "Vishu",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}

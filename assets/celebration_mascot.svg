@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="100%" height="100%">
+  <defs>
+    <radialGradient id="celebGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff0f5"/>
+      <stop offset="60%" stop-color="#ffd1dc"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="celebShadow">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#e91e63" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#celebShadow)">
+    <!-- Aura halo -->
+    <circle cx="120" cy="120" r="100" fill="url(#celebGlow)"/>
+
+    <!-- Sparkles and stars -->
+    <g fill="#ffb703">
+      <polygon points="40,40 44,48 52,52 44,56 40,64 36,56 28,52 36,48"/>
+      <polygon points="200,45 203,51 209,54 203,57 200,63 197,57 191,54 197,51"/>
+      <polygon points="190,170 193,176 199,179 193,182 190,188 187,182 181,179 187,176"/>
+      <polygon points="45,160 48,166 54,169 48,172 45,178 42,172 36,169 42,166"/>
+    </g>
+
+    <!-- Bear Body -->
+    <ellipse cx="120" cy="155" rx="55" ry="46" fill="#f8ede3" stroke="#e0bc9e" stroke-width="4"/>
+    <ellipse cx="120" cy="160" rx="36" ry="30" fill="#ffffff"/>
+
+    <!-- Bear Ears with party hat -->
+    <circle cx="82" cy="72" r="22" fill="#f8ede3" stroke="#e0bc9e" stroke-width="4"/>
+    <circle cx="82" cy="72" r="12" fill="#ffb3c6"/>
+    <circle cx="158" cy="72" r="22" fill="#f8ede3" stroke="#e0bc9e" stroke-width="4"/>
+    <circle cx="158" cy="72" r="12" fill="#ffb3c6"/>
+
+    <!-- Bear Head -->
+    <ellipse cx="120" cy="112" rx="58" ry="48" fill="#f8ede3" stroke="#e0bc9e" stroke-width="4"/>
+
+    <!-- Happy Curved Eyes (Smiling with pure joy) -->
+    <path d="M 85 106 Q 98 94 110 106" fill="none" stroke="#2d1c24" stroke-width="4.5" stroke-linecap="round"/>
+    <path d="M 130 106 Q 142 94 155 106" fill="none" stroke="#2d1c24" stroke-width="4.5" stroke-linecap="round"/>
+
+    <!-- Blushing Cheeks -->
+    <ellipse cx="80" cy="116" rx="15" ry="9" fill="#ff4d79" opacity="0.6"/>
+    <ellipse cx="160" cy="116" rx="15" ry="9" fill="#ff4d79" opacity="0.6"/>
+
+    <!-- Big Happy Open Smile -->
+    <path d="M 108 118 Q 120 142 132 118 Z" fill="#e63946" stroke="#2d1c24" stroke-width="2.5"/>
+    <ellipse cx="120" cy="128" rx="8" ry="5" fill="#ff99a8"/>
+    <!-- Cute little nose -->
+    <polygon points="120,114 116,110 124,110" fill="#4a2e22"/>
+
+    <!-- Paws in the air celebrating! (Yaaay!) -->
+    <ellipse cx="65" cy="95" rx="14" ry="11" fill="#f8ede3" stroke="#e0bc9e" stroke-width="3" transform="rotate(-30, 65, 95)"/>
+    <ellipse cx="175" cy="95" rx="14" ry="11" fill="#f8ede3" stroke="#e0bc9e" stroke-width="3" transform="rotate(30, 175, 95)"/>
+
+    <!-- Little Party Hat -->
+    <polygon points="120,42 108,74 132,74" fill="#ff4d79" stroke="#ffffff" stroke-width="2"/>
+    <circle cx="120" cy="40" r="6" fill="#ffeb3b"/>
+    <line x1="110" y1="62" x2="130" y2="62" stroke="#ffffff" stroke-width="2.5"/>
+    <line x1="113" y1="52" x2="127" y2="52" stroke="#ffeb3b" stroke-width="2.5"/>
+
+    <!-- Big Red Heart Held or Floating -->
+    <g transform="translate(120, 165) scale(0.65)">
+      <path d="M 0 15 C 0 -10, -35 -10, -35 15 C -35 40, 0 65, 0 75 C 0 65, 35 40, 35 15 C 35 -10, 0 -10, 0 15 Z" fill="#ff1d58" stroke="#ffffff" stroke-width="3"/>
+    </g>
+  </g>
+</svg>

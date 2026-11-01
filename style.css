@@ -1,0 +1,1981 @@
+/* ==========================================================================
+   A STORY JUST FOR YOU - ROMANTIC LAVENDER & SUNFLOWER DESIGN SYSTEM
+   ========================================================================== */
+
+:root {
+  /* Lavender & Sunflower Color Palette */
+  --bg-romantic: #f6f0fc;
+  --bg-gradient-1: #ede3f8;
+  --bg-gradient-2: #fff9e6;
+  
+  --book-cover: #331a47;
+  --book-cover-border: #5a2e7d;
+  --book-page-bg: #fcfaff;
+  --book-page-alt: #f7f2fc;
+  --book-spine: rgba(50, 20, 70, 0.12);
+  
+  --gold-accent: #f5a623;
+  --gold-light: #fff3ce;
+  --gold-border: rgba(245, 166, 35, 0.45);
+
+  --sunflower-yellow: #ffb703;
+  --sunflower-gold: #fb8500;
+  --sunflower-soft: #fff9e6;
+  
+  --primary-rose: #7e52a0;
+  --primary-hover: #68388e;
+  --primary-light: #f3ecf9;
+  --primary-subtle: #e8dbf4;
+  --lilac-accent: #bba0eb;
+  
+  --whatsapp-green: #25d366;
+  --whatsapp-dark: #128c7e;
+  
+  --text-primary: #281b36;
+  --text-secondary: #58446b;
+  --text-muted: #8b769f;
+  --border-light: #e4d8f0;
+  
+  /* Typography */
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-reading: 'Lora', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-script: 'Caveat', cursive, sans-serif;
+  
+  /* Shadows & Depth */
+  --book-shadow: 0 25px 60px -15px rgba(50, 25, 75, 0.28), 
+                 0 15px 30px -10px rgba(0, 0, 0, 0.12),
+                 0 0 0 1px rgba(245, 166, 35, 0.25);
+  --page-shadow: 0 5px 25px rgba(0, 0, 0, 0.04);
+  --card-shadow: 0 8px 24px rgba(80, 45, 115, 0.08);
+  --hover-shadow: 0 16px 36px rgba(110, 60, 155, 0.2);
+  
+  /* Radii */
+  --radius-book: 18px;
+  --radius-page: 12px;
+  --radius-card: 14px;
+  --radius-btn: 30px;
+}
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  min-height: 100vh;
+  width: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-romantic);
+  background-image: 
+    radial-gradient(at 0% 0%, #e9d8fb 0px, transparent 55%),
+    radial-gradient(at 100% 0%, #fff0cf 0px, transparent 45%),
+    radial-gradient(at 100% 100%, #eedeff 0px, transparent 55%),
+    radial-gradient(at 0% 100%, #fdf3d6 0px, transparent 45%);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 16px;
+  overflow-x: hidden;
+  position: relative;
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   AMBIENT BACKGROUND PARTICLES (Sunflowers & Lavender Hearts)
+   ========================================================================== */
+.ambient-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.floating-heart {
+  position: absolute;
+  font-size: 1.3rem;
+  user-select: none;
+  animation: floatUpward 13s linear infinite;
+  filter: drop-shadow(0 2px 5px rgba(126, 82, 160, 0.2));
+}
+
+@keyframes floatUpward {
+  0% {
+    transform: translateY(105vh) scale(0.6) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.75;
+  }
+  85% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateY(-10vh) scale(1.15) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* ==========================================================================
+   BOOK PERSPECTIVE & OUTER HARDCOVER
+   ========================================================================== */
+.book-perspective {
+  position: relative;
+  width: 100%;
+  max-width: 820px;
+  perspective: 1600px;
+  z-index: 10;
+  margin: 0 auto;
+}
+
+/* Hanging Silk Bookmark in Lavender with Golden Stitch */
+.ribbon-bookmark {
+  position: absolute;
+  top: -8px;
+  right: 65px;
+  width: 32px;
+  height: 64px;
+  background: linear-gradient(135deg, #784ba0, #9f6ecd);
+  box-shadow: 0 4px 12px rgba(80, 30, 110, 0.35);
+  z-index: 40;
+  border-radius: 2px 2px 0 0;
+  cursor: pointer;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border-left: 1px dashed rgba(255, 204, 51, 0.55);
+  border-right: 1px dashed rgba(255, 204, 51, 0.55);
+}
+
+.ribbon-bookmark:hover {
+  transform: translateY(10px);
+}
+
+.ribbon-tail {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+  border-bottom: 14px solid var(--book-page-bg);
+}
+
+/* Book Container */
+.book-container {
+  background: var(--book-cover);
+  border: 4px solid var(--book-cover-border);
+  border-radius: var(--radius-book);
+  box-shadow: var(--book-shadow);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+/* Gold foil trim around book frame */
+.book-container::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border: 1px solid var(--gold-border);
+  border-radius: calc(var(--radius-book) - 4px);
+  pointer-events: none;
+  z-index: 30;
+}
+
+/* ==========================================================================
+   TOP BAR & NAVIGATION
+   ========================================================================== */
+.book-top-bar {
+  background: linear-gradient(180deg, #2b173e 0%, #1e0f2d 100%);
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(245, 166, 35, 0.35);
+  position: relative;
+  z-index: 25;
+}
+
+.book-emboss-title {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  color: var(--gold-light);
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.page-badge {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 5px 14px;
+  border-radius: 20px;
+  letter-spacing: 0.02em;
+}
+
+.music-toggle-btn {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.music-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.28);
+  transform: scale(1.04);
+}
+
+.music-toggle-btn.playing {
+  background: linear-gradient(135deg, #8a53b8, #af73e8);
+  border-color: #d1a8f9;
+  box-shadow: 0 0 12px rgba(175, 115, 232, 0.6);
+}
+
+/* ==========================================================================
+   PAGES VIEWPORT & PAGE FLIP ARCHITECTURE
+   ========================================================================== */
+.book-pages-wrapper {
+  position: relative;
+  min-height: 580px;
+  background: var(--book-page-bg);
+  box-shadow: inset 0 0 40px rgba(70, 20, 100, 0.05);
+}
+
+/* Centerfold book spine shadow */
+.book-spine-shadow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    rgba(50, 15, 75, 0.04) 0%, 
+    rgba(50, 15, 75, 0.12) 50%, 
+    rgba(50, 15, 75, 0.04) 100%);
+  pointer-events: none;
+  z-index: 20;
+}
+
+/* Individual Book Page */
+.page {
+  display: none;
+  padding: 38px 42px 34px;
+  width: 100%;
+  min-height: 580px;
+  opacity: 0;
+  position: relative;
+  background: var(--book-page-bg);
+  background-image: 
+    radial-gradient(#eedeff 1px, transparent 1px),
+    radial-gradient(#faf0db 1px, transparent 1px);
+  background-size: 28px 28px;
+  background-position: 0 0, 14px 14px;
+}
+
+.page.active {
+  display: block;
+  animation: pageTurnIn 0.45s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes pageTurnIn {
+  from {
+    opacity: 0;
+    transform: rotateY(-6deg) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: rotateY(0deg) scale(1);
+  }
+}
+
+.page-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+/* Headers */
+.page-header-block {
+  text-align: center;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 16px;
+}
+
+.page-tag {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--primary-rose);
+  background: var(--primary-light);
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+  border: 1px solid var(--primary-subtle);
+}
+
+.page-title {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  color: #241433;
+  margin-bottom: 6px;
+}
+
+.page-subtitle {
+  font-family: var(--font-reading);
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.page-turn-hint {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px dashed var(--border-light);
+  font-family: var(--font-script);
+  font-size: 1.25rem;
+  color: var(--primary-rose);
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.page-turn-hint:hover {
+  transform: translateX(5px);
+  color: var(--primary-hover);
+}
+
+.hint-arrow {
+  font-size: 1.3rem;
+  transition: transform 0.2s ease;
+}
+
+.page-turn-hint:hover .hint-arrow {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   PAGE 1: SINCERE APOLOGY LETTER
+   ========================================================================== */
+.letter-scroll {
+  position: relative;
+}
+
+.letter-stamp {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 12px;
+  border: 2px dashed #ccafe8;
+  border-radius: 8px;
+  background: #fdfbff;
+  transform: rotate(4deg);
+  box-shadow: 0 2px 8px rgba(126, 82, 160, 0.08);
+}
+
+.stamp-icon {
+  font-size: 1.4rem;
+}
+
+.stamp-text {
+  font-family: var(--font-script);
+  font-size: 0.95rem;
+  color: var(--primary-rose);
+  font-weight: 700;
+}
+
+.letter-greeting {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  color: #241433;
+  font-weight: 700;
+  margin-bottom: 24px;
+  padding-right: 80px;
+}
+
+.letter-body {
+  font-family: var(--font-reading);
+  font-size: 1.05rem;
+  color: #2e2238;
+  line-height: 1.85;
+}
+
+.letter-body p {
+  margin-bottom: 20px;
+}
+
+/* Decorative Drop Cap for first letter */
+.dropcap-paragraph::first-letter {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  float: left;
+  line-height: 0.85;
+  padding-right: 12px;
+  padding-top: 4px;
+  color: var(--primary-rose);
+  font-weight: 700;
+}
+
+.highlight-quote {
+  border-left: 4px solid var(--sunflower-yellow);
+  padding: 16px 22px;
+  background: linear-gradient(90deg, #f5ecfc 0%, #fffcf5 100%);
+  border-radius: 0 10px 10px 0;
+  font-style: italic;
+  font-size: 1.12rem;
+  color: #241433;
+  margin: 28px 0;
+  box-shadow: 0 2px 10px rgba(126, 82, 160, 0.06);
+}
+
+.letter-closing {
+  margin-top: 32px;
+  border-top: 1px dashed var(--border-light);
+  padding-top: 24px;
+}
+
+.letter-signoff {
+  font-family: var(--font-reading);
+  font-size: 1.05rem;
+  font-style: italic;
+  color: #241433;
+  margin-bottom: 20px;
+}
+
+.wax-seal-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.wax-seal {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #8a53b8, #522778);
+  box-shadow: 0 4px 12px rgba(82, 39, 120, 0.35), inset 0 2px 3px rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.wax-seal:hover {
+  transform: scale(1.08) rotate(5deg);
+}
+
+.wax-heart {
+  font-size: 1.35rem;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
+}
+
+.handwritten-sign {
+  font-family: var(--font-script);
+  font-size: 1.55rem;
+  color: var(--primary-rose);
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   PAGE 2: PICTURES OF US (SCRAPBOOK POLAROIDS)
+   ========================================================================== */
+.polaroid-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px 20px;
+  margin-bottom: 28px;
+}
+
+/* Responsive 5-card layout */
+@media (min-width: 680px) {
+  .polaroid-grid-5 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 24px 20px;
+  }
+  .polaroid-grid-5 .polaroid-card:nth-child(1) { grid-column: span 2; }
+  .polaroid-grid-5 .polaroid-card:nth-child(2) { grid-column: span 2; }
+  .polaroid-grid-5 .polaroid-card:nth-child(3) { grid-column: span 2; }
+  /* Centered row 2 with 2 cards */
+  .polaroid-grid-5 .polaroid-card:nth-child(4) { grid-column: 2 / span 2; }
+  .polaroid-grid-5 .polaroid-card:nth-child(5) { grid-column: 4 / span 2; }
+}
+
+.polaroid-card {
+  background: #ffffff;
+  padding: 12px 12px 18px 12px;
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(70, 35, 95, 0.08), 0 1px 4px rgba(0, 0, 0, 0.05);
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), box-shadow 0.3s ease;
+  cursor: pointer;
+  border: 1px solid rgba(126, 82, 160, 0.08);
+}
+
+.polaroid-card:hover {
+  transform: translateY(-8px) scale(1.03) rotate(0deg) !important;
+  box-shadow: 0 18px 36px rgba(110, 50, 155, 0.22);
+  z-index: 10;
+}
+
+/* Subtle Polaroid Rotations */
+.tilt-left { transform: rotate(-2.2deg); }
+.tilt-right { transform: rotate(2deg); }
+.tilt-straight { transform: rotate(0.4deg); }
+
+/* Washi Tape Effect */
+.washi-tape {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 22px;
+  opacity: 0.88;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  z-index: 5;
+  border-left: 2px dashed rgba(255, 255, 255, 0.5);
+  border-right: 2px dashed rgba(255, 255, 255, 0.5);
+}
+
+.tape-pink { background: rgba(225, 190, 245, 0.88); }
+.tape-yellow { background: rgba(255, 204, 51, 0.9); }
+.tape-blue { background: rgba(186, 155, 230, 0.88); }
+
+.tape-lavender { background: rgba(186, 155, 230, 0.88); }
+.tape-sunflower {
+  background: rgba(255, 204, 51, 0.92);
+  border-top: 1px dotted rgba(210, 130, 0, 0.4);
+  border-bottom: 1px dotted rgba(210, 130, 0, 0.4);
+}
+.tape-lilac { background: rgba(225, 190, 245, 0.88); }
+
+/* Corner Sunflower Badge on Polaroid */
+.sunflower-sticker-corner {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  font-size: 1.15rem;
+  z-index: 5;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+  transition: transform 0.3s ease;
+}
+
+.polaroid-card:hover .sunflower-sticker-corner {
+  transform: scale(1.25) rotate(15deg);
+}
+
+/* Polaroid Image Container */
+.polaroid-img-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 3px;
+  background: #f3ecf9;
+  position: relative;
+}
+
+.polaroid-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+.polaroid-card:hover .polaroid-img {
+  transform: scale(1.06);
+}
+
+/* Change Photo Button */
+.change-photo-btn {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 6;
+}
+
+.polaroid-card:hover .change-photo-btn {
+  opacity: 1;
+}
+
+.change-photo-btn:hover {
+  transform: scale(1.15);
+  background: #ffffff;
+}
+
+.zoom-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(45, 20, 60, 0.55);
+  color: #fff;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.polaroid-card:hover .zoom-badge {
+  opacity: 1;
+}
+
+.polaroid-caption {
+  padding-top: 12px;
+  text-align: center;
+}
+
+.caption-handwritten {
+  font-family: var(--font-script);
+  font-size: 1.15rem;
+  color: #2b1f35;
+  line-height: 1.3;
+  margin-bottom: 2px;
+}
+
+.caption-date {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   PAGE 3: WHATSAPP STICKERS BOARD
+   ========================================================================== */
+.sticker-tabs {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.tab-btn {
+  background: #f2e9f8;
+  border: 1px solid var(--border-light);
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+  background: #e8dcf4;
+  color: var(--primary-rose);
+}
+
+.tab-btn.active {
+  background: var(--primary-rose);
+  color: #ffffff;
+  border-color: var(--primary-rose);
+  box-shadow: 0 3px 10px rgba(126, 82, 160, 0.3);
+}
+
+.stickers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.sticker-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-card);
+  padding: 14px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(80, 40, 110, 0.05);
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+  user-select: none;
+}
+
+.sticker-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 24px rgba(110, 50, 150, 0.14);
+}
+
+.sticker-card.bouncing {
+  animation: stickerBounce 0.6s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes stickerBounce {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.22) rotate(-6deg); }
+  50% { transform: scale(0.92) rotate(4deg); }
+  75% { transform: scale(1.08) rotate(-2deg); }
+}
+
+.whatsapp-badge {
+  position: absolute;
+  top: -8px;
+  right: 10px;
+  background: var(--whatsapp-green);
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2px 6px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(37, 211, 102, 0.3);
+}
+
+.sticker-media-wrap {
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.sticker-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.12));
+}
+
+.change-sticker-btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.sticker-card:hover .change-sticker-btn {
+  opacity: 1;
+}
+
+.change-sticker-btn:hover {
+  transform: scale(1.15);
+  background: #ffffff;
+}
+
+.sticker-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sticker-caption {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.tap-hint {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+/* Helpful guide banners */
+.folder-guide-banner {
+  background: linear-gradient(90deg, #f5ecfc 0%, #fffbf2 100%);
+  border: 1px dashed #caaee8;
+  border-radius: 10px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.85rem;
+  color: #3b284c;
+  margin-bottom: 24px;
+}
+
+.guide-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.folder-guide-banner code {
+  background: rgba(0, 0, 0, 0.06);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-weight: 600;
+  color: var(--primary-rose);
+}
+
+/* ==========================================================================
+   PAGE 4: THE BIG QUESTION & ELUSIVE UNCLICKABLE NO BUTTON
+   ========================================================================== */
+.question-page-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 520px;
+  position: relative;
+  overflow: visible;
+}
+
+.mascot-wrapper {
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.mascot-img {
+  width: 140px;
+  height: 140px;
+  display: block;
+  margin: 0 auto;
+}
+
+.pulse-mascot {
+  animation: mascotBreath 3s ease-in-out infinite;
+}
+
+@keyframes mascotBreath {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05) translateY(-3px); }
+}
+
+.question-header {
+  max-width: 540px;
+  margin: 0 auto 20px;
+}
+
+.question-title {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  color: #241433;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 10px rgba(126, 82, 160, 0.15);
+}
+
+.question-subtitle {
+  font-family: var(--font-reading);
+  font-size: 1.02rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Escape attempts counter badge */
+.escape-counter {
+  margin-bottom: 24px;
+  min-height: 32px;
+}
+
+.counter-badge {
+  display: inline-block;
+  background: rgba(126, 82, 160, 0.08);
+  color: var(--primary-rose);
+  border: 1px solid rgba(126, 82, 160, 0.22);
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+/* Floating speech bubble that tracks the No button */
+.runaway-bubble {
+  position: fixed;
+  background: #ffffff;
+  border: 2px solid var(--primary-rose);
+  color: var(--primary-rose);
+  padding: 8px 16px;
+  border-radius: 16px;
+  font-family: var(--font-script);
+  font-size: 1.25rem;
+  font-weight: 700;
+  box-shadow: 0 8px 24px rgba(126, 82, 160, 0.28);
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(10px) scale(0.9);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  white-space: nowrap;
+}
+
+.runaway-bubble.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.runaway-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid var(--primary-rose);
+}
+
+/* Arena for Buttons */
+.buttons-arena {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  min-height: 120px;
+  margin: 10px auto 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+/* Button Base */
+.btn {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: var(--radius-btn);
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  user-select: none;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.2s ease;
+}
+
+/* YES BUTTON (Glowing Lavender with Sunflower Sparkle) */
+.btn-yes {
+  background: linear-gradient(135deg, #8a53b8 0%, #63328e 100%);
+  color: #ffffff;
+  box-shadow: 0 8px 25px rgba(126, 82, 160, 0.45), 0 2px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 5;
+  animation: pulseYesLavender 2.4s ease-in-out infinite;
+}
+
+@keyframes pulseYesLavender {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 8px 25px rgba(126, 82, 160, 0.45);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 12px 35px rgba(138, 83, 184, 0.7), 0 0 18px rgba(255, 183, 3, 0.4);
+  }
+}
+
+.btn-yes:hover {
+  transform: scale(1.1) !important;
+  box-shadow: 0 14px 40px rgba(126, 82, 160, 0.75), 0 0 22px rgba(255, 183, 3, 0.5);
+}
+
+.btn-heart-icon {
+  font-size: 1.25rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.btn-sparkle {
+  font-size: 1.1rem;
+}
+
+/* NO BUTTON (HOPS & CHANGES PLACE RIGHT ON THE PAGE) */
+.btn-no {
+  background: #f2eaf7;
+  color: #554165;
+  border: 1px solid #d8c6e8;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 15;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-no.running {
+  background: #ede0f7;
+  color: #682d94;
+  border-color: #b78dd6;
+  box-shadow: 0 8px 22px rgba(104, 45, 148, 0.25);
+}
+
+.closing-love-note {
+  margin-top: 10px;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.forever-signature {
+  display: block;
+  font-family: var(--font-script);
+  font-size: 1.5rem;
+  color: var(--primary-rose);
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+/* ==========================================================================
+   BOOK FOOTER & CONTROLS
+   ========================================================================== */
+.book-bottom-bar {
+  background: linear-gradient(180deg, #fdfaff 0%, #f4eef9 100%);
+  border-top: 1px solid var(--border-light);
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 25;
+}
+
+.book-nav-btn {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+}
+
+.book-nav-btn:hover:not(:disabled) {
+  background: #f7effe;
+  border-color: var(--primary-rose);
+  color: var(--primary-rose);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(126, 82, 160, 0.2);
+}
+
+.book-nav-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.book-dots {
+  display: flex;
+  gap: 10px;
+}
+
+.book-dot {
+  background: #eadaf5;
+  border: 1px solid transparent;
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.book-dot .dot-number {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.book-dot .dot-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.book-dot:hover {
+  background: #decaef;
+}
+
+.book-dot.active {
+  background: var(--primary-rose);
+  border-color: var(--primary-rose);
+  box-shadow: 0 4px 12px rgba(126, 82, 160, 0.35);
+}
+
+.book-dot.active .dot-number {
+  color: var(--primary-rose);
+}
+
+.book-dot.active .dot-label {
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   CELEBRATION OVERLAY MODAL (Featuring Donkey Sticker & Cute Note)
+   ========================================================================== */
+.celebration-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.celebration-modal.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.celebration-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(30, 14, 45, 0.78);
+  backdrop-filter: blur(8px);
+}
+
+.celebration-card {
+  position: relative;
+  background: #ffffff;
+  max-width: 540px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 24px;
+  padding: 32px 28px;
+  text-align: center;
+  box-shadow: 0 25px 70px rgba(35, 10, 50, 0.45);
+  border: 2px solid #d4b8f0;
+  transform: scale(0.85) translateY(20px);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 10;
+}
+
+.celebration-modal.open .celebration-card {
+  transform: scale(1) translateY(0);
+}
+
+/* Sunflower corner accents in modal */
+.modal-sunflower-decor {
+  position: absolute;
+  font-size: 2rem;
+  line-height: 1;
+  pointer-events: none;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+}
+.decor-top-left { top: 16px; left: 18px; transform: rotate(-15deg); }
+.decor-top-right { top: 16px; right: 18px; transform: rotate(15deg); }
+
+/* Donkey Sticker in Celebration Modal */
+.celebration-sticker-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.celebration-donkey-img {
+  width: 155px;
+  height: 155px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 8px 18px rgba(80, 30, 120, 0.22));
+  animation: donkeyBounce 2s ease-in-out infinite alternate;
+}
+
+@keyframes donkeyBounce {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-7px) scale(1.04); }
+}
+
+.sticker-tag-badge {
+  display: inline-block;
+  background: #f3eafb;
+  color: #632e8f;
+  border: 1px solid #d4b8f0;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.celebration-title {
+  font-family: var(--font-serif);
+  font-size: 1.85rem;
+  color: #6a349c;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+/* Cute Note Letter inside modal */
+.celebration-note-letter {
+  background: linear-gradient(135deg, #fcfaff 0%, #fffef8 100%);
+  border: 1.5px dashed #caaee8;
+  border-radius: 16px;
+  padding: 20px 22px;
+  margin-bottom: 20px;
+  text-align: left;
+  position: relative;
+  box-shadow: 0 4px 14px rgba(126, 82, 160, 0.06);
+}
+
+.note-seal {
+  position: absolute;
+  top: -12px;
+  right: 18px;
+  font-size: 1.4rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+}
+
+.note-heading {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: #55277f;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.note-p {
+  font-family: var(--font-reading);
+  font-size: 0.98rem;
+  color: #382548;
+  line-height: 1.65;
+  margin-bottom: 10px;
+}
+
+.note-signoff {
+  font-family: var(--font-reading);
+  font-size: 0.95rem;
+  color: #4a3060;
+  margin-top: 12px;
+  border-top: 1px dashed #e2d1f4;
+  padding-top: 8px;
+}
+
+.sign-handwritten {
+  font-family: var(--font-script);
+  font-size: 1.35rem;
+  color: #7e52a0;
+  font-weight: 700;
+}
+
+.celebration-promises-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 22px;
+}
+
+.promise-tag {
+  background: #f4ecfb;
+  color: #5e2888;
+  border: 1px solid #d7bdf2;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+}
+
+.celebration-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.whatsapp-send-btn {
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 14px 24px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+  transition: all 0.25s ease;
+}
+
+.whatsapp-send-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5);
+}
+
+.wa-icon {
+  font-size: 1.3rem;
+}
+
+.celebration-close-btn {
+  background: transparent;
+  border: 1px solid var(--border-light);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.celebration-close-btn:hover {
+  background: #f5edfb;
+  color: var(--primary-rose);
+}
+
+/* ==========================================================================
+   LIGHTBOX MODAL
+   ========================================================================== */
+.lightbox-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox-modal.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 10, 30, 0.88);
+  backdrop-filter: blur(6px);
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 620px;
+  max-height: 85vh;
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  border: 1px solid #d4b8f0;
+  z-index: 10;
+  text-align: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 65vh;
+  object-fit: contain;
+  border-radius: 6px;
+  display: block;
+  margin: 0 auto;
+}
+
+.lightbox-caption {
+  font-family: var(--font-script);
+  font-size: 1.4rem;
+  color: #2b1f35;
+  margin-top: 12px;
+}
+
+.lightbox-close-btn {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  background: var(--primary-rose);
+  color: #fff;
+  border: 2px solid #ffffff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (MOBILE & TABLET OPTIMIZATIONS)
+   ========================================================================== */
+
+/* Tablets and small laptops (<= 768px) */
+@media (max-width: 768px) {
+  body {
+    padding: 12px 8px;
+  }
+
+  .book-perspective {
+    max-width: 100%;
+  }
+
+  .book-container {
+    border-width: 2px;
+  }
+
+  .ribbon-bookmark {
+    right: 20px;
+    width: 24px;
+    height: 48px;
+  }
+
+  .page {
+    padding: 28px 22px 22px;
+    min-height: auto;
+  }
+
+  .polaroid-grid-5 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px 14px;
+  }
+
+  .polaroid-grid-5 .polaroid-card:nth-child(n) {
+    grid-column: auto !important;
+  }
+
+  .polaroid-grid-5 .polaroid-card:nth-child(5) {
+    grid-column: span 2 !important;
+    max-width: 280px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .stickers-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+}
+
+/* Mobile Phones (<= 580px) */
+@media (max-width: 580px) {
+  body {
+    padding: 4px 2px;
+    align-items: flex-start;
+  }
+
+  .book-perspective {
+    margin: 0;
+    width: 100%;
+  }
+
+  .book-container {
+    border-radius: 12px;
+    border-width: 2px;
+    box-shadow: 0 10px 30px rgba(50, 25, 75, 0.2);
+  }
+
+  /* Sleek 1-Line Mobile Top Bar */
+  .book-top-bar {
+    padding: 10px 10px;
+    flex-wrap: nowrap;
+    gap: 6px;
+    justify-content: space-between;
+  }
+
+  .book-emboss-title {
+    font-size: 0.76rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 125px;
+  }
+
+  .page-badge {
+    font-size: 0.68rem;
+    padding: 3px 8px;
+    white-space: nowrap;
+    background: rgba(255, 255, 255, 0.16);
+  }
+
+  .music-toggle-btn {
+    font-size: 0.68rem;
+    padding: 3px 8px;
+    gap: 3px;
+    white-space: nowrap;
+  }
+
+  .music-label {
+    display: none;
+  }
+
+  /* Compact Hanging Silk Ribbon */
+  .ribbon-bookmark {
+    right: 12px;
+    width: 18px;
+    height: 36px;
+    top: -4px;
+  }
+
+  .ribbon-tail {
+    border-left-width: 9px;
+    border-right-width: 9px;
+    border-bottom-width: 8px;
+  }
+
+  /* Mobile Page Container */
+  .book-pages-wrapper {
+    min-height: auto;
+  }
+
+  .page {
+    padding: 20px 12px 18px;
+    min-height: auto;
+  }
+
+  .page-header-block {
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+  }
+
+  .page-tag {
+    font-size: 0.68rem;
+    padding: 3px 10px;
+  }
+
+  .page-title {
+    font-size: 1.45rem;
+    line-height: 1.25;
+  }
+
+  .page-subtitle {
+    font-size: 0.85rem;
+  }
+
+  /* Page 1: Mobile Letter */
+  .letter-stamp {
+    position: static;
+    float: right;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    padding: 4px 8px;
+    transform: rotate(3deg);
+  }
+
+  .stamp-icon { font-size: 1.15rem; }
+  .stamp-text { font-size: 0.8rem; }
+
+  .letter-greeting {
+    font-size: 1.35rem;
+    padding-right: 0;
+    margin-bottom: 18px;
+    clear: both;
+  }
+
+  .letter-body {
+    font-size: 0.94rem;
+    line-height: 1.72;
+  }
+
+  .letter-body p {
+    margin-bottom: 16px;
+  }
+
+  .dropcap-paragraph::first-letter {
+    font-size: 2.7rem;
+    padding-right: 8px;
+  }
+
+  .highlight-quote {
+    padding: 12px 14px;
+    font-size: 0.94rem;
+    margin: 20px 0;
+    border-left-width: 3px;
+  }
+
+  .letter-closing {
+    margin-top: 24px;
+    padding-top: 18px;
+  }
+
+  .letter-signoff {
+    font-size: 0.95rem;
+    margin-bottom: 16px;
+  }
+
+  .wax-seal {
+    width: 44px;
+    height: 44px;
+  }
+
+  .wax-heart {
+    font-size: 1.15rem;
+  }
+
+  .handwritten-sign {
+    font-size: 1.35rem;
+  }
+
+  /* Page 2: Mobile Scrapbook 2-Column Grid with Centered 5th Photo */
+  .polaroid-grid,
+  .polaroid-grid-5 {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 12px 9px !important;
+    margin-bottom: 22px;
+  }
+
+  .polaroid-card {
+    padding: 8px 8px 12px 8px;
+  }
+
+  .polaroid-grid-5 .polaroid-card:nth-child(5) {
+    grid-column: 1 / -1 !important;
+    max-width: 250px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .washi-tape {
+    width: 48px;
+    height: 16px;
+    top: -8px;
+  }
+
+  .sunflower-sticker-corner {
+    font-size: 0.95rem;
+    bottom: 4px;
+    left: 4px;
+  }
+
+  .caption-handwritten {
+    font-size: 0.88rem;
+    line-height: 1.25;
+  }
+
+  .caption-date {
+    font-size: 0.62rem;
+  }
+
+  /* Page 3: Touch Horizontal Scrollable Tabs & 2-Col Grid */
+  .sticker-tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 8px;
+    gap: 6px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .sticker-tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-btn {
+    flex-shrink: 0;
+    font-size: 0.74rem;
+    padding: 5px 11px;
+  }
+
+  .stickers-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px;
+  }
+
+  .sticker-card {
+    padding: 10px 8px 8px;
+  }
+
+  .sticker-media-wrap {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 6px;
+  }
+
+  .sticker-caption {
+    font-size: 0.72rem;
+    line-height: 1.25;
+  }
+
+  .tap-hint {
+    font-size: 0.62rem;
+  }
+
+  /* Page 4: Question Page on Mobile */
+  .question-page-content {
+    min-height: auto;
+    padding: 10px 4px 15px;
+  }
+
+  .mascot-img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .question-title {
+    font-size: 1.55rem;
+    line-height: 1.25;
+    margin-bottom: 8px;
+  }
+
+  .question-subtitle {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .escape-counter {
+    margin-bottom: 16px;
+  }
+
+  .counter-badge {
+    font-size: 0.78rem;
+    padding: 3px 12px;
+  }
+
+  .buttons-arena {
+    min-height: 140px;
+    gap: 14px;
+    margin: 8px auto 20px;
+  }
+
+  .btn {
+    padding: 12px 20px;
+    font-size: 0.92rem;
+  }
+
+  .btn-yes {
+    padding: 13px 22px;
+    font-size: 0.95rem;
+  }
+
+  .btn-no {
+    padding: 11px 18px;
+    font-size: 0.88rem;
+  }
+
+  .forever-signature {
+    font-size: 1.35rem;
+  }
+
+  /* Celebration Modal on Mobile */
+  .celebration-modal {
+    padding: 12px 8px;
+  }
+
+  .celebration-card {
+    max-width: 95vw;
+    max-height: 90vh;
+    padding: 22px 14px;
+    border-radius: 18px;
+  }
+
+  .celebration-donkey-img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .sticker-tag-badge {
+    font-size: 0.74rem;
+    padding: 3px 10px;
+  }
+
+  .celebration-title {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+  }
+
+  .celebration-note-letter {
+    padding: 14px 12px;
+    margin-bottom: 16px;
+    border-radius: 12px;
+  }
+
+  .note-heading {
+    font-size: 1rem;
+    margin-bottom: 6px;
+  }
+
+  .note-p {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    margin-bottom: 8px;
+  }
+
+  .note-signoff {
+    font-size: 0.88rem;
+    margin-top: 8px;
+    padding-top: 6px;
+  }
+
+  .sign-handwritten {
+    font-size: 1.15rem;
+  }
+
+  .celebration-promises-box {
+    gap: 6px;
+    margin-bottom: 18px;
+  }
+
+  .promise-tag {
+    font-size: 0.72rem;
+    padding: 4px 9px;
+  }
+
+  .whatsapp-send-btn {
+    font-size: 0.88rem;
+    padding: 12px 16px;
+  }
+
+  .celebration-close-btn {
+    font-size: 0.82rem;
+    padding: 8px 14px;
+  }
+
+  .modal-sunflower-decor {
+    font-size: 1.35rem;
+  }
+
+  /* Bottom Bar Controls on Mobile */
+  .book-bottom-bar {
+    padding: 10px 10px;
+    gap: 6px;
+  }
+
+  .book-nav-btn {
+    padding: 7px 10px;
+    font-size: 0.76rem;
+    gap: 4px;
+  }
+
+  .book-dots {
+    gap: 5px;
+  }
+
+  .book-dot {
+    padding: 3px;
+    background: transparent;
+  }
+
+  .book-dot .dot-number {
+    width: 22px;
+    height: 22px;
+    font-size: 0.72rem;
+  }
+
+  .book-dot .dot-label {
+    display: none;
+  }
+
+  .page-turn-hint {
+    font-size: 1.05rem;
+    margin-top: 22px;
+    padding-top: 12px;
+  }
+}
+
+/* Extra Small Phones (<= 360px, e.g. iPhone SE 1st gen) */
+@media (max-width: 360px) {
+  .book-top-bar {
+    padding: 8px 6px;
+  }
+
+  .book-emboss-title {
+    max-width: 95px;
+    font-size: 0.7rem;
+  }
+
+  .polaroid-grid,
+  .polaroid-grid-5 {
+    gap: 10px 6px !important;
+  }
+
+  .polaroid-card {
+    padding: 6px 6px 10px 6px;
+  }
+
+  .btn {
+    padding: 10px 14px;
+    font-size: 0.84rem;
+  }
+}

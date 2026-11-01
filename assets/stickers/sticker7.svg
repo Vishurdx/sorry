@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <filter id="bobaShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  <g filter="url(#bobaShadow)">
+    <!-- Boba Cup -->
+    <path d="M 68 65 L 75 145 Q 100 155 125 145 L 132 65 Z" fill="#fff0e6" stroke="#4a3728" stroke-width="4"/>
+    <!-- Milk Tea Liquid -->
+    <path d="M 70 85 L 75 143 Q 100 152 125 143 L 130 85 Q 100 90 70 85 Z" fill="#e8b98d"/>
+    <ellipse cx="100" cy="85" rx="30" ry="6" fill="#ddaa7d"/>
+    <!-- Tapioca Pearls -->
+    <circle cx="85" cy="136" r="7" fill="#362213"/>
+    <circle cx="102" cy="138" r="7.5" fill="#362213"/>
+    <circle cx="116" cy="133" r="6.5" fill="#362213"/>
+    <circle cx="93" cy="125" r="7" fill="#362213"/>
+    <circle cx="109" cy="123" r="6.5" fill="#362213"/>
+    <!-- Lid and Straw -->
+    <ellipse cx="100" cy="65" rx="36" ry="10" fill="#ffffff" stroke="#4a3728" stroke-width="4"/>
+    <path d="M 104 20 L 96 70" stroke="#ff4d79" stroke-width="9" stroke-linecap="round"/>
+    <path d="M 104 20 L 96 70" stroke="#ffffff" stroke-width="2" stroke-linecap="round"/>
+    <!-- Cute Happy Face on Cup -->
+    <circle cx="88" cy="108" r="3.5" fill="#362213"/>
+    <circle cx="112" cy="108" r="3.5" fill="#362213"/>
+    <path d="M 96 112 Q 100 117 104 112" fill="none" stroke="#362213" stroke-width="2" stroke-linecap="round"/>
+    <ellipse cx="82" cy="112" rx="4" ry="2.5" fill="#ff8da1"/>
+    <ellipse cx="118" cy="112" rx="4" ry="2.5" fill="#ff8da1"/>
+    <!-- Floating Hearts -->
+    <path d="M 145 50 C 145 42, 132 40, 128 47 C 124 40, 111 42, 111 50 C 111 62, 128 70, 128 73 C 128 70, 145 62, 145 50 Z" fill="#ff4d79" transform="scale(0.5) translate(140, 20)"/>
+    <text x="100" y="180" text-anchor="middle" fill="#9c5123" font-size="13" font-family="'Plus Jakarta Sans', sans-serif" font-weight="bold">Boba Peace Offering? 🧋</text>
+  </g>
+</svg>

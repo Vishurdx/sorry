@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <filter id="kissShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  <g filter="url(#kissShadow)">
+    <!-- Bunny Head -->
+    <ellipse cx="90" cy="115" rx="46" ry="40" fill="#ffffff" stroke="#ff94b8" stroke-width="4"/>
+    <!-- Bunny Long Ears -->
+    <ellipse cx="70" cy="50" rx="14" ry="34" fill="#ffffff" stroke="#ff94b8" stroke-width="4" transform="rotate(-12, 70, 50)"/>
+    <ellipse cx="70" cy="52" rx="7" ry="24" fill="#ffccd8" transform="rotate(-12, 70, 52)"/>
+    <ellipse cx="108" cy="48" rx="14" ry="34" fill="#ffffff" stroke="#ff94b8" stroke-width="4" transform="rotate(10, 108, 48)"/>
+    <ellipse cx="108" cy="50" rx="7" ry="24" fill="#ffccd8" transform="rotate(10, 108, 50)"/>
+    <!-- Winking / Kissing Face -->
+    <!-- Winking eye -->
+    <path d="M 68 110 Q 75 104 82 110" fill="none" stroke="#52313b" stroke-width="3.5" stroke-linecap="round"/>
+    <!-- Open Shiny Eye -->
+    <ellipse cx="108" cy="108" rx="7" ry="9" fill="#52313b"/>
+    <circle cx="106" cy="105" r="3" fill="#ffffff"/>
+    <!-- Blushing Cheeks -->
+    <ellipse cx="62" cy="122" rx="10" ry="6" fill="#ff99bb" opacity="0.8"/>
+    <ellipse cx="118" cy="120" rx="10" ry="6" fill="#ff99bb" opacity="0.8"/>
+    <!-- Pouty Kissy Mouth -->
+    <path d="M 88 120 Q 94 117 92 124 Q 96 122 92 128" fill="none" stroke="#e03366" stroke-width="3" stroke-linecap="round"/>
+    <!-- Floating Kiss Heart -->
+    <g transform="translate(132, 90)">
+      <path d="M 0 10 C 0 -5, -20 -5, -20 10 C -20 25, 0 38, 0 45 C 0 38, 20 25, 20 10 C 20 -5, 0 -5, 0 10 Z" fill="#ff2d60" stroke="#ffffff" stroke-width="2"/>
+      <polygon points="18,5 20,9 25,10 20,12 18,17 16,12 11,10 16,9" fill="#fffb8f"/>
+    </g>
+    <text x="100" y="180" text-anchor="middle" fill="#e03366" font-size="13" font-family="'Plus Jakarta Sans', sans-serif" font-weight="bold">Sending Endless Love 💋</text>
+  </g>
+</svg>

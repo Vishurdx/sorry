@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <defs>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)">
+    <!-- Cat Ears -->
+    <polygon points="45,65 30,20 75,45" fill="#f8c8d8" stroke="#ffffff" stroke-width="6" stroke-linejoin="round"/>
+    <polygon points="50,60 40,32 70,48" fill="#ff99b6"/>
+    <polygon points="155,65 170,20 125,45" fill="#f8c8d8" stroke="#ffffff" stroke-width="6" stroke-linejoin="round"/>
+    <polygon points="150,60 160,32 130,48" fill="#ff99b6"/>
+    <!-- Cat Head -->
+    <ellipse cx="100" cy="95" rx="65" ry="55" fill="#ffffff" stroke="#f08da6" stroke-width="5"/>
+    <!-- Blush -->
+    <ellipse cx="58" cy="105" rx="14" ry="8" fill="#ffb3c6" opacity="0.7"/>
+    <ellipse cx="142" cy="105" rx="14" ry="8" fill="#ffb3c6" opacity="0.7"/>
+    <!-- Big watery pleading eyes -->
+    <circle cx="72" cy="90" r="14" fill="#332228"/>
+    <circle cx="68" cy="85" r="5" fill="#ffffff"/>
+    <circle cx="76" cy="94" r="2.5" fill="#ffffff"/>
+    <circle cx="128" cy="90" r="14" fill="#332228"/>
+    <circle cx="124" cy="85" r="5" fill="#ffffff"/>
+    <circle cx="132" cy="94" r="2.5" fill="#ffffff"/>
+    <!-- Cute Sad Eyebrows -->
+    <path d="M 60 72 Q 72 66 84 74" fill="transparent" stroke="#55333e" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 116 74 Q 128 66 140 72" fill="transparent" stroke="#55333e" stroke-width="3" stroke-linecap="round"/>
+    <!-- Cute Mouth and Nose -->
+    <path d="M 100 97 L 97 94 A 3 3 0 0 1 103 94 Z" fill="#ff6b8b"/>
+    <path d="M 94 105 Q 100 100 100 98 Q 100 100 106 105" fill="transparent" stroke="#55333e" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Paws holding Heart -->
+    <g transform="translate(100, 138)">
+      <path d="M 0 15 Q -25 -15 -40 0 Q -50 20 -20 40 L 0 55 L 20 40 Q 50 20 40 0 Q 25 -15 0 15 Z" fill="#ff4d79" stroke="#ffffff" stroke-width="3"/>
+      <text x="0" y="26" text-anchor="middle" fill="#ffffff" font-size="13" font-family="'Plus Jakarta Sans', sans-serif" font-weight="bold">I'm Sorry</text>
+      <!-- Tiny paws -->
+      <ellipse cx="-28" cy="0" rx="12" ry="10" fill="#ffffff" stroke="#f08da6" stroke-width="3"/>
+      <ellipse cx="28" cy="0" rx="12" ry="10" fill="#ffffff" stroke="#f08da6" stroke-width="3"/>
+    </g>
+  </g>
+</svg>
