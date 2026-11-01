@@ -4,6 +4,7 @@
   "description": "A sweet, interactive apology and love letter frontend website",
   "main": "index.html",
   "scripts": {
+    "build": "echo 'Static build complete'",
     "start": "node server.js",
     "dev": "node server.js"
   },
