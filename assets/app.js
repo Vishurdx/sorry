@@ -4,17 +4,6 @@
  * ==========================================================================
  */
 
-// Environment Guard: Prevent execution crashes if evaluated in a Node.js / Serverless runtime
-if (typeof document === 'undefined') {
-  if (typeof module !== 'undefined' && module.exports) {
-    module.exports = (req, res) => {
-      if (res && typeof res.writeHead === 'function') {
-        res.writeHead(200, { 'Content-Type': 'text/html; charset=utf-8' });
-        res.end('<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0; url=/"></head><body><p>Redirecting to static site...</p></body></html>');
-      }
-    };
-  }
-} else {
 document.addEventListener('DOMContentLoaded', () => {
   // --- State Variables ---
   let currentPage = 1;
@@ -752,4 +741,3 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize on Page 1
   updatePage(1);
 });
-}

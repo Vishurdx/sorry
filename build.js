@@ -47,7 +47,7 @@ function copyDir(src, dest) {
 }
 
 // 4. Copy core static files
-const staticFiles = ['index.html', 'style.css', 'app.js'];
+const staticFiles = ['index.html', 'style.css'];
 for (const file of staticFiles) {
   const srcPath = path.join(rootDir, file);
   if (fs.existsSync(srcPath)) {
