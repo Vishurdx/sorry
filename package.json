@@ -4,9 +4,10 @@
   "description": "A sweet, interactive apology and love letter frontend website",
   "main": "index.html",
   "scripts": {
-    "build": "echo 'Static site ready'",
+    "build": "node build.js",
     "start": "node local-server.js",
-    "dev": "node local-server.js"
+    "dev": "node local-server.js",
+    "preview": "serve dist"
   },
   "keywords": [
     "love",
